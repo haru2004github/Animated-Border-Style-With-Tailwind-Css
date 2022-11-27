@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Border Style With Tailwind Css</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <style>
+        .box{
+            z-index: -3;
+        }
+        .box::after{
+            background-image: conic-gradient(transparent,transparent,transparent,#00ccff);
+            animation: rotate 4s linear infinite;
+            animation-delay: -2s;
+            z-index:-2;
+        }
+        .box::before{
+            background-image: conic-gradient(transparent,transparent,transparent,#ff0095);
+            animation: rotate 4s linear infinite;
+            z-index:0;
+        }
+        h3{
+            -webkit-text-stroke:1px #00ccff;
+            color: transparent;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body class="min-h-screen  bg-[#0c1022] ">
+    <h3 class="text-7xl text-center mt-20">Hello</h3>
+    <h3 class="text-5xl mt-5 capitalize text-center">This is animated border style</h3>
+    <div class="flex flex-col lg:flex-row justify-center items-center gap-x-28 mt-20 lg:mt-32">
+        <div class="overflow-hidden mt-24 box relative w-[300px] h-[300px] bg-[#000000c7] rounded-5 flex justify-center items-center after:absolute after:w-[500px] after:h-[500px] before:absolute before:w-[500px] before:h-[500px] ">
+            <span class="inset-1 flex-col absolute z-50 flex justify-center items-center bg-[#000000c7] rounded-5">
+                <h1 class="text-3xl text-[#00ccff] text-center">Hpone Pyae Sone</h1>
+                <h2 class="text-[#ff0095] text-xl mt-3">Web Developer</h2>
+            </span>
+        </div>
+        <div class="overflow-hidden mt-24 box relative w-[300px] h-[300px] bg-[#000000c7] rounded-full flex justify-center items-center after:absolute after:w-[500px] after:h-[500px] before:absolute before:w-[500px] before:h-[500px] ">
+            <span class="inset-1 flex-col absolute z-50 flex justify-center items-center bg-[#000000c7] rounded-full">
+                <h1 class="text-3xl text-[#00ccff] text-center">Hpone Pyae Sone</h1>
+                <h2 class="text-[#ff0095] text-xl mt-3">Web Developer</h2>
+            </span>
+        </div>
+        <div class="overflow-hidden mt-24 box relative w-[300px] h-[300px] bg-[#000000c7] rounded-tl-[50px] rounded-tr-[20px] rounded-br-[50px] flex justify-center items-center after:absolute after:w-[500px] after:h-[500px] before:absolute before:w-[500px] before:h-[500px] ">
+            <span class="inset-1 flex-col absolute z-50 flex justify-center items-center bg-[#000000c7] rounded-tl-[50px] rounded-br-[50px] rounded-tr-[20px]">
+                <h1 class="text-3xl text-[#00ccff] text-center">Hpone Pyae Sone</h1>
+                <h2 class="text-[#ff0095] text-xl mt-3">Web Developer</h2>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
